@@ -4,6 +4,26 @@ vcloud-sdk-php-helpers
 Utility classes for vCloud Director PHP SDK
 
 
+Installation
+------------
+
+Installation can be done via [Composer](http://getcomposer.org/). All you need
+is to add this to your `composer.json`:
+
+```
+  "repositories": [
+    {
+      "type": "pear",
+      "url": "http://pear.php.net"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.2",
+    "vmware/vcloud-sdk-patched": "*",
+    "pear-pear/HTTP_Request2": "*"
+  }
+```
+
 Usage
 -----
 
