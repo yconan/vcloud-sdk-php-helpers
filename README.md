@@ -20,12 +20,36 @@ is to add this to your `composer.json`:
   "require": {
     "php": ">=5.3.2",
     "vmware/vcloud-sdk-patched": "*",
-    "pear-pear/HTTP_Request2": "*"
+    "pear-pear/HTTP_Request2": "*",
+    "purple-dbu/vcloud-sdk-helpers": "1.0.0"
   }
 ```
 
 Usage
 -----
+
+
+### Right Helper
+
+The Right Helper gives you the ability to manipulate user rights with ease. It
+helps you determining the current logged user rights.
+
+#### Determine whether the current user is administrator of his organization, or
+not
+
+```php
+use \Purple\Dbu\VCloud\Helpers\Right as RightHelper;
+use \VMware_VCloud_SDK_Service as SDKService;
+```
+```php
+...
+$service = SDKService::getService();
+$service->login(...);
+
+RightHelper::isOrganizationAdmin($service)
+
+// => true|false depending on user rights
+```
 
 
 ### Query Helper
@@ -37,10 +61,10 @@ Service with ease. It provides abstraction for pagination.
 #### Get all results for query 'adminVApp'
 ```php
 use \Purple\Dbu\VCloud\Helpers\Query as QueryHelper;
-use \VMware_VCloud_SDK_Query_Types as QueryTypes;
+use \VMware_VCloud_SDK_Query_Types as SDKQueryTypes;
 ```
 ```php
-QueryHelper::queryAll(QueryTypes::ADMIN_VAPP);
+QueryHelper::queryAll(SDKQueryTypes::ADMIN_VAPP);
 
 // => array(
 //        QueryResultAdminVAppRecordType,
@@ -51,11 +75,11 @@ QueryHelper::queryAll(QueryTypes::ADMIN_VAPP);
 #### Get the query result for 'adminVApp' with id 'c47ddf20-05de-44f5-b79e-c463992ffd3f'
 ```php
 use \Purple\Dbu\VCloud\Helpers\Query as QueryHelper;
-use \VMware_VCloud_SDK_Query_Types as QueryTypes;
+use \VMware_VCloud_SDK_Query_Types as SDKQueryTypes;
 ```
 ```php
 QueryHelper::query(
-    QueryTypes::ADMIN_VAPP,
+    SDKQueryTypes::ADMIN_VAPP,
     'id==c47ddf20-05de-44f5-b79e-c463992ffd3f'
 );
 
