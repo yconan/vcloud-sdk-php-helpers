@@ -71,6 +71,20 @@ use \VMware_VCloud_SDK_Exception as SDKException;
 ...
 catch(SDKException $e) {
   ExceptionHelper::getMessage($e);
-  // => The message contained in the error XML
+  // => (string) The message contained in the error XML
+}
+```
+
+#### Get the error code
+
+```php
+use \Purple\Dbu\VCloud\Helpers\Exception as ExceptionHelper;
+use \VMware_VCloud_SDK_Exception as SDKException;
+```
+```php
+...
+catch(SDKException $e) {
+  ExceptionHelper::getMajorErrorCode($e);
+  // => (int) The major error code contained in the error XML
 }
 ```
