@@ -109,6 +109,7 @@ catch(SDKException $e) {
 }
 ```
 
+
 Licensing
 ---------
 
@@ -116,3 +117,32 @@ This project is released under [MIT License](LICENSE) license. If this license
 does not fit your requirement for whatever reason, but you would be interested
 in using the work (as defined below) under another license, please contact
 Purple DBU at [dbu.purple@gmail.com](mailto:dbu.purple@gmail.com).
+
+
+Contributing
+------------
+
+Contributions (issues ♥, pull requests ♥♥♥) are more than welcome! Feel free to
+clone, fork, modify, extend, etc, as long as you respect the
+[license terms](LICENSE).
+
+
+### Requirements
+
+You need to have the following software installed:
+- git
+- make
+- curl
+- php >= 5.3.2
+
+
+### Getting started
+
+To start contributing, the best is to follow these steps:
+
+1. Create a GitHub account
+2. Create your own fork of this project
+3. Clone it to your machine: `git clone https://github.com/<you>/vcloud-sdk-php-helpers.git`
+4. Go to the project's root directory: `cd vcloud-sdk-php-helpers`
+5. Install dependencies: `make`
+6. Run unit tests: `make unit`

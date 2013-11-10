@@ -1,3 +1,6 @@
+all: vendor
+	#
+
 clean:
 	[ -d vendor ] && rm -Rf vendor
 
