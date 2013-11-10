@@ -108,3 +108,11 @@ catch(SDKException $e) {
   // => (int) The major error code contained in the error XML
 }
 ```
+
+Licensing
+---------
+
+This project is released under [MIT License](LICENSE) license. If this license
+does not fit your requirement for whatever reason, but you would be interested
+in using the work (as defined below) under another license, please contact
+Purple DBU at [dbu.purple@gmail.com](mailto:dbu.purple@gmail.com).
