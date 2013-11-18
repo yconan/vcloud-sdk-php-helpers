@@ -23,8 +23,7 @@ class Query
     protected function isLastRecordsPage(\VMware_VCloud_API_QueryResultRecordsType $records)
     {
         foreach ($records->getLink() as $link) {
-            if ($link->get_rel() === 'lastPage')
-            {
+            if ($link->get_rel() === 'lastPage') {
                 return false;
             }
         }
@@ -57,6 +56,6 @@ class Query
     public function queryRecord($type, $filter = null)
     {
         $records = $this->queryRecordsPage($type, $filter, $page)->getRecord();
-        return isset(count($records) > 0) ? $records[0] : false;
+        return count($records) > 0 ? $records[0] : false;
     }
 }

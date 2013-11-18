@@ -14,7 +14,7 @@
     "license": "MIT",
     "autoload": {
         "psr-0": {
-            "VMware\\": "src/"
+            "VCloud\\Helpers\\": "src/"
         }
     },
     "include-path": [

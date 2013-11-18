@@ -2,20 +2,18 @@
 
 namespace VCloud\Helpers;
 
-use \VMware\VCloud\SDK\Exception as SDKException;
-
 class Exception
 {
     protected $originalException;
     protected $document;
 
-    public function __construct(SDKException $originalException)
+    public function __construct(\VMware_VCloud_SDK_Exception $originalException)
     {
         $this->originalException = $originalException;
-        $this->$document = new SimpleXMLElement($e->getMessage());
+        $this->document = new \SimpleXMLElement($originalException->getMessage());
     }
 
-    public static function create(SDKException $originalException)
+    public static function create(\VMware_VCloud_SDK_Exception $originalException)
     {
         return new self($originalException);
     }
@@ -27,26 +25,26 @@ class Exception
 
     public function getMessage()
     {
-        return $this->document->message;
+        return $this->document->attributes()->message->__toString();
     }
 
     public function getMajorErrorCode()
     {
-        return $this->document->majorErrorCode;
+        return $this->document->attributes()->majorErrorCode->__toString();
     }
 
     public function getMinorErrorCode()
     {
-        return $this->document->minorErrorCode;
+        return $this->document->attributes()->minorErrorCode->__toString();
     }
 
     public function getVendorSpecificErrorCode()
     {
-        return $this->document->vendorSpecificErrorCode;
+        return $this->document->attributes()->vendorSpecificErrorCode->__toString();
     }
 
     public function getStackTrace()
     {
-        return $this->document->stackTrace;
+        return $this->document->attributes()->stackTrace->__toString();
     }
 }

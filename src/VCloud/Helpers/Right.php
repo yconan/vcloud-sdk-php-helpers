@@ -39,8 +39,7 @@ class Right
         }
 
         $id = $right->get_id();
-        foreach ($this->getCurrentUserRights() as $r)
-        {
+        foreach ($this->getCurrentUserRights() as $r) {
             if ($r->get_id() === $id) {
                 return true;
             }
