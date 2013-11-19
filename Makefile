@@ -11,8 +11,8 @@ clean:
 # Testing
 
 lint: composer.lock
-	vendor/bin/phpcs$(EXT) --standard=PSR1 src/
-	vendor/bin/phpcs$(EXT) --standard=PSR2 src/
+	vendor/bin/phpcs$(EXT) --standard=PSR1 src/ tests/
+	vendor/bin/phpcs$(EXT) --standard=PSR2 src/ tests/
 
 test: composer.lock
 	make lint && \
