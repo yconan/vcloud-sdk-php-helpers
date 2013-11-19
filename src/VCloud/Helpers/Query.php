@@ -1,9 +1,15 @@
 <?php
 
 namespace VCloud\Helpers;
-
+/**
+ * The Query Helper gives you the ability to manipulate the vCloud SDK Query
+ * Service with ease. It provides abstraction for pagination.
+ */
 class Query
 {
+    /**
+     * Default page size for queries
+     */
     const DEFAULT_PAGE_SIZE = 128;
 
     protected $queryService;
