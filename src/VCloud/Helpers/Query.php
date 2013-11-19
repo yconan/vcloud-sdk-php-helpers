@@ -32,7 +32,7 @@ class Query
 
     protected function queryRecordsPage($type, $filter, $page)
     {
-        $params = new VMware_VCloud_SDK_Query_Params();
+        $params = new \VMware_VCloud_SDK_Query_Params();
         $params->setPageSize($this->pageSize);
         $params->setPage($page);
 
@@ -46,7 +46,7 @@ class Query
     public function queryRecords($type, $filter = null)
     {
         $allRecords = array();
-        for ($page = 0, $records = null; $records === null || $this->isLastRecordsPage($records); $page++) {
+        for ($page = 1, $records = null; $records === null || !$this->isLastRecordsPage($records); $page++) {
             $records = $this->queryRecordsPage($type, $filter, $page);
             $allRecords = array_merge($allRecords, $records->getRecord());
         }
@@ -55,7 +55,7 @@ class Query
 
     public function queryRecord($type, $filter = null)
     {
-        $records = $this->queryRecordsPage($type, $filter, $page)->getRecord();
+        $records = $this->queryRecordsPage($type, $filter, 1)->getRecord();
         return count($records) > 0 ? $records[0] : false;
     }
 }

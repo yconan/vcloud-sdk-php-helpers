@@ -2,8 +2,19 @@
 
 require_once dirname(__FILE__) . '/../../vendor/autoload.php';
 
+/**
+ * Setup autoloading
+ */
+include __DIR__ . '/../_autoload.php';
+
+/**
+ * Read config
+ */
 $config = new \Zend\Config\Config(include dirname(__FILE__) . '/../config.php');
 
+/**
+ * Log in against vCloud Director
+ */
 $service = VMware_VCloud_SDK_Service::getService();
 $service->login(
     $config->host,
