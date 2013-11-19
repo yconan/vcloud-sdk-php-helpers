@@ -173,4 +173,4 @@ To start contributing, the best is to follow these steps:
 3. Clone it to your machine: `git clone https://github.com/<you>/vcloud-sdk-php-helpers.git`
 4. Go to the project's root directory: `cd vcloud-sdk-php-helpers`
 5. Install dependencies: `make`
-6. Run unit tests: `make unit`
+6. Run tests: `make test`
