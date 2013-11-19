@@ -12,7 +12,7 @@ class Object
      */
     public static function createReference($type, $href, $name = null)
     {
-        $object = new VMware_VCloud_API_ReferenceType();
+        $object = new \VMware_VCloud_API_ReferenceType();
         $object->set_href($href);
         if ($name != null) {
             $object->set_name($name);
