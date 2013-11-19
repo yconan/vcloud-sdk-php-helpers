@@ -38,13 +38,12 @@ class Exception
         return $this->document->attributes()->minorErrorCode->__toString();
     }
 
-    public function getVendorSpecificErrorCode()
-    {
-        return $this->document->attributes()->vendorSpecificErrorCode->__toString();
-    }
-
     public function getStackTrace()
     {
-        return $this->document->attributes()->stackTrace->__toString();
+        return str_replace(
+            '             at',
+            "\n             at",
+            $this->document->attributes()->stackTrace->__toString()
+        );
     }
 }

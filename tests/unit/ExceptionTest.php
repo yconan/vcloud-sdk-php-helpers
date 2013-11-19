@@ -1,6 +1,6 @@
 <?php
 
-namespace Test\VCloud\Helpers;
+namespace VCloudTest\Helpers\Unit;
 
 class ExceptionUnitTestCase extends \PHPUnit_Framework_TestCase
 {
@@ -12,6 +12,11 @@ class ExceptionUnitTestCase extends \PHPUnit_Framework_TestCase
         $this->e = new \VMware_VCloud_SDK_Exception(file_get_contents(__DIR__ . '/_files/Error.xml'));
     }
 
+    public function testGetOriginalException()
+    {
+        $this->assertEquals($this->e, \VCloud\Helpers\Exception::create($this->e)->getOriginalException());
+    }
+
     public function testGetMessage()
     {
         $this->assertEquals(
@@ -20,6 +25,30 @@ class ExceptionUnitTestCase extends \PHPUnit_Framework_TestCase
             . 'is mounted by VM(s): "__e2cLBHA__Production_m_1372316882".  Please '
             . 'eject media from the VM(s) before deleting media.',
             \VCloud\Helpers\Exception::create($this->e)->getMessage()
+        );
+    }
+
+    public function testGetMajorErrorCode()
+    {
+        $this->assertEquals(
+            '400',
+            \VCloud\Helpers\Exception::create($this->e)->getMajorErrorCode()
+        );
+    }
+
+    public function testGetMinorErrorCode()
+    {
+        $this->assertEquals(
+            'BAD_REQUEST',
+            \VCloud\Helpers\Exception::create($this->e)->getMinorErrorCode()
+        );
+    }
+
+    public function testGetStackTrace()
+    {
+        $this->assertEquals(
+            175,
+            count(explode("\n", \VCloud\Helpers\Exception::create($this->e)->getStackTrace()))
         );
     }
 }
