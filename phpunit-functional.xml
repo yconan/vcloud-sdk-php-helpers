@@ -11,18 +11,12 @@
          processIsolation="false"
          stopOnFailure="false"
          syntaxCheck="false"
-         bootstrap="./tests/unit/bootstrap.php">
+         bootstrap="./tests/functional/bootstrap.php">
 
     <testsuites>
-        <testsuite name="php-cli-helpers unit tests">
-            <directory>./tests/unit/</directory>
+        <testsuite name="php-cli-helpers functional tests">
+            <directory>./tests/functional/</directory>
         </testsuite>
     </testsuites>
-
-    <filter>
-      <whitelist processUncoveredFilesFromWhitelist="true">
-        <directory suffix=".php">./src/</directory>
-      </whitelist>
-    </filter>
 
 </phpunit>

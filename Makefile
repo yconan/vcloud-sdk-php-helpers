@@ -17,6 +17,7 @@ lint: composer.lock
 test: composer.lock
 	make lint && \
 	vendor/bin/phpunit$(EXT) --coverage-html build/logs/coverage --coverage-text=build/logs/coverage.txt && \
+	vendor/bin/phpunit$(EXT) --configuration phpunit-functional.xml && \
 	echo && \
 	echo ======== Code coverage ======== && \
 	cat build/logs/coverage.txt | grep -A3 Summary | tail -n 3 && \

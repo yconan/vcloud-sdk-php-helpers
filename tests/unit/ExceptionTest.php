@@ -8,7 +8,6 @@ class ExceptionUnitTestCase extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        // die(file_get_contents(__DIR__ . '/_files/Error.xml'));
         $this->e = new \VMware_VCloud_SDK_Exception(file_get_contents(__DIR__ . '/_files/Error.xml'));
     }
 

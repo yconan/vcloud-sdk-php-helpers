@@ -40,8 +40,8 @@ class Exception
 
     public function getStackTrace()
     {
-        return str_replace(
-            '             at',
+        return preg_replace(
+            '/  +at/',
             "\n             at",
             $this->document->attributes()->stackTrace->__toString()
         );
