@@ -15,7 +15,7 @@
 
     <testsuites>
         <testsuite name="php-cli-helpers unit tests">
-            <directory>./tests/unit/</directory>
+            <directory>./tests/Unit/</directory>
         </testsuite>
     </testsuites>
 
