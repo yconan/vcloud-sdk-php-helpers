@@ -1,8 +1,8 @@
 <?php
 
-namespace VCloudTest\Helpers\Unit;
+namespace Test\VCloud\Helpers\Unit;
 
-class ExceptionUnitTestCase extends \PHPUnit_Framework_TestCase
+class ExceptionTestCase extends \PHPUnit_Framework_TestCase
 {
     protected $e;
 

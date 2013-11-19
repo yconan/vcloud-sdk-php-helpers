@@ -11,7 +11,7 @@
          processIsolation="false"
          stopOnFailure="false"
          syntaxCheck="false"
-         bootstrap="./tests/functional/bootstrap.php">
+         bootstrap="./tests/Functional/bootstrap.php">
 
     <testsuites>
         <testsuite name="php-cli-helpers functional tests">
