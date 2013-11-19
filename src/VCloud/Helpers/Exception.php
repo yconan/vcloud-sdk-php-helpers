@@ -26,6 +26,7 @@ class Exception
 
     /**
      * Create a new Exception Helper
+     *
      * @param $originalException Any exception thrown by VMware VCloud SDK for PHP
      */
     public function __construct(\VMware_VCloud_SDK_Exception $originalException)
@@ -54,6 +55,7 @@ class Exception
 
     /**
      * Get the original exception
+     *
      * @return \VMware_VCloud_SDK_Exception The original exception
      */
     public function getOriginalException()
@@ -63,6 +65,7 @@ class Exception
 
     /**
      * Get the error message
+     *
      * @return string The error message
      */
     public function getMessage()
@@ -72,6 +75,7 @@ class Exception
 
     /**
      * Get the error major error code
+     *
      * @return string The error major error code
      */
     public function getMajorErrorCode()
@@ -81,6 +85,7 @@ class Exception
 
     /**
      * Get the error minor error code
+     *
      * @return string The error minor error code
      */
     public function getMinorErrorCode()
@@ -90,6 +95,7 @@ class Exception
 
     /**
      * Get the error stack trace
+     *
      * @return string The error stack trace
      */
     public function getStackTrace()
