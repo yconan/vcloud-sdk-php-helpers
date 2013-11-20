@@ -163,6 +163,8 @@ You need to have the following software installed:
 - curl
 - php >= 5.3.2
 
+You need to have a working vCloud Director installation.
+
 
 ### Getting started
 
@@ -172,5 +174,7 @@ To start contributing, the best is to follow these steps:
 2. Create your own fork of this project
 3. Clone it to your machine: `git clone https://github.com/<you>/vcloud-sdk-php-helpers.git`
 4. Go to the project's root directory: `cd vcloud-sdk-php-helpers`
-5. Install dependencies: `make`
-6. Run tests: `make test`
+5. Create the file _tests/config.php_: `cp tests/config.php.sample tests/config.php`
+6. Edit `tests/config.php` and set values according to your vCloud Director configuration
+7. Install dependencies: `make`
+8. Run tests: `make test`
