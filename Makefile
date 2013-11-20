@@ -14,7 +14,7 @@ lint: composer.lock
 	vendor/bin/phpcs$(EXT) --standard=PSR1 src/ tests/
 	vendor/bin/phpcs$(EXT) --standard=PSR2 src/ tests/
 
-test: composer.lock
+test: composer.lock tests/config.php
 	make lint && \
 	vendor/bin/phpunit$(EXT) --coverage-html build/logs/coverage --coverage-text=build/logs/coverage.txt && \
 	vendor/bin/phpunit$(EXT) --configuration phpunit-functional.xml && \
