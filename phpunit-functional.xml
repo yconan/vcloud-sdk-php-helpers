@@ -15,7 +15,7 @@
 
     <testsuites>
         <testsuite name="php-cli-helpers functional tests">
-            <directory>./tests/functional/</directory>
+            <directory>./tests/Functional/</directory>
         </testsuite>
     </testsuites>
 
